@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTANA HAJJ & UMROH TRAVEL</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c1: #0A1931; --c2: #1A3D63; --c3: #4A7FA7; --c4: #B3CFE5; --c5: #F6FAFD;
+    --font-d: 'Amiri', serif; --font-b: 'Plus Jakarta Sans', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-b); background: var(--c5); color: var(--c1); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-thumb { background: var(--c3); border-radius: 3px; }
+
+  /* Pattern */
+  .pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%234A7FA7' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+
+  /* ====== NAVBAR ====== */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,25,49,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(74,127,167,0.15); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--c3), var(--c4)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-d); font-weight: bold; color: #fff; font-size: 18px; }
+  .logo-text .t1 { color: #fff; font-weight: 800; font-size: 15px; line-height: 1.2; }
+  .logo-text .t2 { color: var(--c4); font-size: 11px; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: var(--c4); text-decoration: none; font-size: 13.5px; font-weight: 500; transition: color .2s; position: relative; }
+  .nav-links a::after { content:''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--c3); transition: width .3s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-ctas { display: flex; gap: 10px; }
+  .btn-wa { background: #16a34a; color: #fff; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; transition: background .2s; }
+  .btn-wa:hover { background: #15803d; }
+  .btn-daftar { background: var(--c3); color: #fff; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600; transition: all .2s; }
+  .btn-daftar:hover { background: var(--c2); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(74,127,167,.4); }
+
+  /* ====== TABS (Page sim) ====== */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ====== HERO ====== */
+  .hero { background: linear-gradient(135deg, var(--c1) 0%, var(--c2) 60%, var(--c1) 100%); min-height: 92vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 68px; }
+  .hero::before { content:''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 L80 20 L80 60 L40 80 L0 60 L0 20 Z' fill='none' stroke='%234A7FA7' stroke-opacity='0.06' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='15' fill='none' stroke='%234A7FA7' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E"); }
+  .hero-blob1 { position: absolute; top: 10%; right: 5%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(74,127,167,.12), transparent); border-radius: 50%; }
+  .hero-blob2 { position: absolute; bottom: 10%; left: 5%; width: 280px; height: 280px; background: radial-gradient(circle, rgba(179,207,229,.08), transparent); border-radius: 50%; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 60px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(74,127,167,.18); border: 1px solid rgba(74,127,167,.35); color: var(--c4); padding: 7px 16px; border-radius: 100px; font-size: 12.5px; margin-bottom: 20px; }
+  .hero-badge::before { content: '✓'; width: 16px; height: 16px; background: var(--c3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fff; }
+  .hero-arabic { font-family: var(--font-d); font-size: 22px; color: rgba(179,207,229,.65); margin-bottom: 12px; font-style: italic; }
+  .hero h1 { font-family: var(--font-d); font-size: 58px; font-weight: 700; color: #fff; line-height: 1.05; margin-bottom: 8px; }
+  .hero h1 span { color: var(--c3); display: block; }
+  .hero-tagline { color: rgba(179,207,229,.8); font-size: 17px; margin-bottom: 6px; font-family: var(--font-d); font-style: italic; }
+  .hero-desc { color: rgba(179,207,229,.65); font-size: 14.5px; line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-btns a { padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 14.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all .25s; }
+  .btn-primary-hero { background: var(--c3); color: #fff; }
+  .btn-primary-hero:hover { background: var(--c2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(74,127,167,.4); }
+  .btn-green-hero { background: #16a34a; color: #fff; }
+  .btn-green-hero:hover { background: #15803d; }
+  .hero-stats { display: flex; gap: 32px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(26,61,99,.7); }
+  .stat-item .val { font-size: 28px; font-weight: 800; color: var(--c3); }
+  .stat-item .lbl { font-size: 11px; color: rgba(179,207,229,.6); margin-top: 2px; }
+
+  /* Package Card */
+  .pkg-card { background: rgba(255,255,255,.05); backdrop-filter: blur(10px); border: 1px solid rgba(74,127,167,.2); border-radius: 24px; padding: 28px; }
+  .pkg-card-title { display: flex; align-items: center; gap: 8px; color: #fff; font-weight: 600; margin-bottom: 20px; font-size: 15px; }
+  .pkg-item { display: flex; justify-content: space-between; align-items: center; background: rgba(26,61,99,.4); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; cursor: pointer; transition: background .2s; }
+  .pkg-item:hover { background: rgba(26,61,99,.7); }
+  .pkg-item .date { color: #fff; font-weight: 600; font-size: 13.5px; }
+  .pkg-item .sub { color: rgba(179,207,229,.6); font-size: 11px; margin-top: 2px; }
+  .pkg-item .price { color: var(--c3); font-weight: 800; font-size: 13.5px; text-align: right; }
+  .pkg-item .price-sub { color: rgba(179,207,229,.5); font-size: 10px; }
+  .pkg-cta { display: block; text-align: center; background: var(--c3); color: #fff; padding: 13px; border-radius: 12px; font-weight: 700; font-size: 13.5px; text-decoration: none; margin-top: 16px; transition: all .2s; }
+  .pkg-cta:hover { background: var(--c4); color: var(--c1); }
+
+  /* ====== LEGALITAS BANNER ====== */
+  .legal-banner { background: var(--c2); padding: 12px 24px; }
+  .legal-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
+  .legal-inner span { color: var(--c4); font-size: 12.5px; font-weight: 600; }
+
+  /* ====== SECTIONS ====== */
+  .section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-badge { display: inline-block; background: rgba(179,207,229,.25); color: var(--c2); font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: 100px; margin-bottom: 14px; letter-spacing: .03em; }
+  .section-title { font-family: var(--font-d); font-size: 38px; font-weight: 700; color: var(--c1); line-height: 1.15; margin-bottom: 12px; }
+  .section-sub { color: #6b7280; font-size: 14.5px; max-width: 520px; line-height: 1.7; }
+  .text-center { text-align: center; }
+  .text-center .section-sub { margin: 0 auto; }
+
+  /* Features Grid */
+  .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 52px; }
+  .feat-card { background: #fff; border-radius: 20px; padding: 24px; border: 1px solid rgba(179,207,229,.3); box-shadow: 0 1px 4px rgba(0,0,0,.04); transition: all .3s; }
+  .feat-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(10,25,49,.1); }
+  .feat-icon { width: 48px; height: 48px; background: var(--c1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; transition: background .3s; font-size: 22px; }
+  .feat-card:hover .feat-icon { background: var(--c3); }
+  .feat-title { font-weight: 700; font-size: 15px; color: var(--c1); margin-bottom: 8px; }
+  .feat-desc { color: #6b7280; font-size: 13px; line-height: 1.65; }
+
+  /* About Section */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .check-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 11px; }
+  .check-list li { display: flex; align-items: center; gap: 12px; font-size: 13.5px; color: #374151; }
+  .check-list li::before { content: '✓'; width: 20px; height: 20px; min-width: 20px; background: var(--c3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fff; font-weight: 700; }
+  .about-card { background: linear-gradient(135deg, var(--c1), var(--c2)); border-radius: 24px; padding: 36px; color: #fff; }
+  .about-card-title { font-family: var(--font-d); font-size: 20px; color: var(--c4); text-align: center; margin-bottom: 28px; }
+  .about-pkg-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(26,61,99,.6); }
+  .about-pkg-row:last-child { border: 0; }
+  .about-pkg-row .adate { font-weight: 600; font-size: 14px; }
+  .about-pkg-row .asub { font-size: 11px; color: rgba(179,207,229,.6); margin-top: 2px; }
+  .about-pkg-row .aprice { font-weight: 800; color: var(--c3); font-size: 14px; }
+  .about-cta { display: block; text-align: center; background: var(--c3); color: #fff; padding: 13px; border-radius: 12px; font-weight: 700; font-size: 13.5px; text-decoration: none; margin-top: 24px; transition: all .2s; }
+  .about-cta:hover { background: var(--c4); color: var(--c1); }
+
+  /* ====== PACKAGES PAGE ====== */
+  .page-header { background: var(--c1); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
+  .page-header::before { content:''; position: absolute; inset: 0; opacity: .2; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%234A7FA7' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .page-header h1 { font-family: var(--font-d); font-size: 46px; font-weight: 700; color: #fff; margin-bottom: 10px; position: relative; }
+  .page-header p { color: var(--c4); font-size: 15px; position: relative; }
+  .page-header .badge { display: inline-block; background: rgba(74,127,167,.2); border: 1px solid rgba(74,127,167,.3); color: var(--c4); font-size: 12px; padding: 5px 14px; border-radius: 100px; margin-bottom: 16px; position: relative; }
+
+  /* Table */
+  .table-wrap { background: #fff; border-radius: 20px; border: 1px solid rgba(179,207,229,.3); box-shadow: 0 1px 4px rgba(0,0,0,.05); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: var(--c1); }
+  th { padding: 14px 20px; text-align: left; font-size: 12px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .04em; }
+  tbody tr { border-bottom: 1px solid rgba(179,207,229,.2); transition: background .15s; }
+  tbody tr:hover { background: var(--c5); }
+  tbody tr:last-child { border: 0; }
+  td { padding: 16px 20px; font-size: 13.5px; }
+  .td-date { font-weight: 700; color: var(--c1); }
+  .td-date span { display: block; font-size: 11px; color: #9ca3af; font-weight: 400; margin-top: 2px; }
+  .td-hotel { display: flex; align-items: center; gap: 5px; color: #374151; }
+  .td-hotel::before { content: '🏨'; font-size: 12px; }
+  .td-harga { font-weight: 800; color: var(--c1); }
+  .td-dp { color: var(--c3); font-weight: 700; }
+  .btn-pilih { display: inline-flex; align-items: center; gap: 5px; background: var(--c1); color: #fff; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none; transition: all .2s; border: none; cursor: pointer; }
+  .btn-pilih:hover { background: var(--c3); }
+
+  /* Inclusions */
+  .inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .inc-item { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px; background: var(--c5); border-radius: 12px; font-size: 13px; color: #374151; }
+  .inc-item::before { content: '✓'; width: 18px; height: 18px; min-width: 18px; background: var(--c3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700; margin-top: 1px; }
+
+  /* ====== FORM ====== */
+  .form-grid { display: grid; grid-template-columns: 1fr 340px; gap: 28px; }
+  .form-card { background: #fff; border-radius: 20px; border: 1px solid rgba(179,207,229,.3); box-shadow: 0 1px 4px rgba(0,0,0,.04); padding: 28px; margin-bottom: 20px; }
+  .form-section-title { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--c1); font-size: 15px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--c5); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-row.full { grid-template-columns: 1fr; }
+  .form-group { margin-bottom: 16px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 7px; }
+  input, select, textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--c4); border-radius: 10px; font-family: var(--font-b); font-size: 13.5px; color: var(--c1); background: #fff; transition: all .2s; outline: none; }
+  input:focus, select:focus, textarea:focus { border-color: var(--c3); box-shadow: 0 0 0 3px rgba(74,127,167,.12); }
+  textarea { resize: none; }
+  .pay-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .pay-opt { border: 2px solid rgba(179,207,229,.4); border-radius: 12px; padding: 14px; cursor: pointer; transition: all .2s; }
+  .pay-opt.selected { border-color: var(--c3); background: rgba(74,127,167,.08); }
+  .pay-opt-label { font-weight: 700; font-size: 13px; color: var(--c1); }
+  .pay-opt-sub { font-size: 11.5px; color: #9ca3af; margin-top: 4px; }
+
+  /* Summary card */
+  .summary-card { background: var(--c1); border-radius: 20px; padding: 28px; color: #fff; position: sticky; top: 88px; }
+  .summary-title { font-family: var(--font-d); font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+  .summary-row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 8px 0; border-bottom: 1px solid rgba(26,61,99,.6); }
+  .summary-row:last-of-type { border: 0; }
+  .summary-row .lbl { color: var(--c4); }
+  .summary-total { display: flex; justify-content: space-between; font-size: 16px; font-weight: 800; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(74,127,167,.3); }
+  .summary-total .price { color: var(--c3); }
+  .btn-submit { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--c3); color: #fff; padding: 15px; border-radius: 12px; font-weight: 800; font-size: 14px; border: none; cursor: pointer; transition: all .2s; margin-top: 20px; }
+  .btn-submit:hover { background: var(--c4); color: var(--c1); }
+
+  /* ====== INVOICE ====== */
+  .invoice-wrap { max-width: 820px; margin: 0 auto; padding: 32px 24px; }
+  .inv-actions { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid rgba(179,207,229,.3); border-radius: 14px; padding: 14px 20px; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
+  .inv-no { font-size: 12px; color: #6b7280; } .inv-no strong { display: block; color: var(--c1); font-size: 15px; font-weight: 800; }
+  .inv-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+  .inv-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 9px; font-size: 12.5px; font-weight: 700; border: none; cursor: pointer; transition: all .2s; text-decoration: none; }
+  .inv-btn-print { border: 1.5px solid #e5e7eb; background: #fff; color: #374151; }
+  .inv-btn-dl { background: var(--c1); color: #fff; }
+  .inv-btn-wa { background: #16a34a; color: #fff; }
+  .inv-btn-pay { background: var(--c3); color: #fff; }
+  .inv-doc { background: #fff; border-radius: 20px; border: 1px solid rgba(179,207,229,.3); box-shadow: 0 2px 12px rgba(0,0,0,.06); overflow: hidden; }
+  .inv-header { background: var(--c1); padding: 36px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+  .inv-co-name { font-family: var(--font-d); font-size: 24px; font-weight: 700; color: #fff; }
+  .inv-co-tag { color: var(--c3); font-size: 13px; margin-top: 4px; }
+  .inv-co-addr { color: rgba(179,207,229,.65); font-size: 12px; margin-top: 8px; }
+  .inv-meta { text-align: right; }
+  .inv-meta .lbl { color: rgba(179,207,229,.6); font-size: 11px; }
+  .inv-meta .val { color: #fff; font-size: 13px; margin-bottom: 6px; }
+  .inv-meta .inv-num { color: var(--c3); font-weight: 800; font-size: 17px; }
+  .status-badge { display: inline-block; padding: 5px 14px; border-radius: 100px; font-size: 11.5px; font-weight: 700; background: #fef3c7; color: #92400e; margin-top: 10px; }
+  .inv-body { padding: 36px; }
+  .inv-section-title { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: #9ca3af; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--c5); }
+  .inv-data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+  .inv-dl dt { font-size: 12px; color: #9ca3af; margin-bottom: 1px; }
+  .inv-dl dd { font-size: 13.5px; font-weight: 600; color: var(--c1); margin-bottom: 10px; }
+  .inv-pay-box { background: var(--c5); border-radius: 14px; padding: 20px; margin-bottom: 24px; }
+  .inv-pay-row { display: flex; justify-content: space-between; padding: 9px 0; font-size: 13.5px; border-bottom: 1px solid rgba(179,207,229,.25); }
+  .inv-pay-row:last-child { border: 0; }
+  .inv-pay-row .lbl { color: #6b7280; }
+  .inv-total-row { display: flex; justify-content: space-between; padding: 14px 0; font-size: 15px; font-weight: 800; margin-top: 8px; border-top: 2px solid rgba(179,207,229,.4); }
+  .inv-total-row .sisa { color: #dc2626; }
+
+  /* ====== TRACKING ====== */
+  .track-wrap { max-width: 600px; margin: 0 auto; padding: 40px 24px; }
+  .track-form { background: #fff; border-radius: 20px; border: 1px solid rgba(179,207,229,.3); shadow: 0 1px 4px rgba(0,0,0,.04); padding: 28px; margin-bottom: 24px; }
+  .track-result { background: #fff; border-radius: 20px; border: 1px solid rgba(179,207,229,.3); overflow: hidden; }
+  .track-result-header { background: var(--c1); padding: 24px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
+  .track-result-header .name { color: #fff; font-weight: 700; font-size: 16px; }
+  .track-result-header .inv { color: var(--c4); font-size: 12px; margin-top: 2px; }
+  .progress-bar { background: #e5e7eb; border-radius: 100px; height: 8px; overflow: hidden; margin: 8px 0 4px; }
+  .progress-fill { background: var(--c3); height: 100%; border-radius: 100px; transition: width 1s ease; }
+  .track-body { padding: 24px; }
+  .pay-hist-item { display: flex; align-items: center; justify-content: space-between; background: var(--c5); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
+  .pay-hist-info .amount { font-weight: 700; font-size: 14px; color: var(--c1); }
+  .pay-hist-info .date { font-size: 11px; color: #9ca3af; margin-top: 1px; }
+  .badge-verified { background: #dcfce7; color: #166534; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+  .badge-pending { background: #fef9c3; color: #854d0e; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+
+  /* ====== KONTAK ====== */
+  .kontak-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .kontak-item { display: flex; gap: 16px; background: #fff; border-radius: 16px; padding: 20px; border: 1px solid rgba(179,207,229,.3); box-shadow: 0 1px 4px rgba(0,0,0,.04); margin-bottom: 16px; }
+  .kontak-icon { width: 42px; height: 42px; background: var(--c1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .kontak-label { font-weight: 700; font-size: 13px; color: var(--c1); margin-bottom: 3px; }
+  .kontak-val { font-size: 14px; color: #374151; }
+  .kontak-val a { color: var(--c3); text-decoration: none; }
+  .kontak-sub { font-size: 11.5px; color: #9ca3af; margin-top: 2px; }
+  .map-placeholder { background: linear-gradient(135deg, #e0e7ef, #c7d9e8); border-radius: 20px; height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--c2); font-size: 36px; border: 1px solid rgba(179,207,229,.3); }
+  .map-placeholder p { font-size: 13px; color: #6b7280; margin-top: 10px; }
+  .consult-box { background: var(--c1); border-radius: 20px; padding: 28px; color: #fff; }
+  .consult-box h3 { font-family: var(--font-d); font-size: 22px; margin-bottom: 12px; }
+  .consult-box p { color: var(--c4); font-size: 13.5px; line-height: 1.7; margin-bottom: 20px; }
+  .consult-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .consult-list li { font-size: 13px; color: var(--c4); display: flex; gap: 8px; }
+  .consult-list li::before { content: '✓'; color: var(--c3); font-weight: 700; }
+
+  /* ====== ADMIN ====== */
+  .admin-layout { display: flex; min-height: 100vh; }
+  .sidebar { width: 240px; background: var(--c1); flex-shrink: 0; display: flex; flex-direction: column; }
+  .sidebar-logo { padding: 20px; border-bottom: 1px solid rgba(26,61,99,.8); display: flex; align-items: center; gap: 10px; }
+  .sidebar-logo .sname { color: #fff; font-weight: 800; font-size: 14px; }
+  .sidebar-logo .stag { color: var(--c4); font-size: 11px; }
+  .sidebar-nav { flex: 1; padding: 16px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 10px; color: var(--c4); font-size: 13.5px; font-weight: 500; cursor: pointer; transition: all .2s; text-decoration: none; }
+  .nav-item:hover { background: rgba(74,127,167,.15); color: #fff; }
+  .nav-item.active { background: var(--c3); color: #fff; }
+  .nav-item .icon { font-size: 16px; }
+  .sidebar-footer { padding: 16px; border-top: 1px solid rgba(26,61,99,.8); }
+  .sidebar-user { font-size: 12px; color: var(--c4); padding: 8px 12px; margin-bottom: 8px; }
+  .sidebar-user .uname { color: #fff; font-weight: 600; font-size: 13px; }
+  .btn-logout { display: flex; align-items: center; gap: 8px; width: 100%; padding: 9px 14px; border-radius: 10px; background: none; border: none; color: rgba(179,207,229,.6); font-size: 13px; cursor: pointer; transition: all .2s; }
+  .btn-logout:hover { background: rgba(185,28,28,.2); color: #f87171; }
+  .admin-main { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+  .admin-topbar { background: #fff; border-bottom: 1px solid rgba(179,207,229,.3); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .admin-topbar .title { font-weight: 700; color: var(--c1); font-size: 15px; }
+  .admin-content { flex: 1; padding: 24px; overflow-y: auto; max-height: calc(100vh - 60px); }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card { background: #fff; border-radius: 16px; border: 1px solid rgba(179,207,229,.3); padding: 20px; }
+  .stat-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .stat-card-top .slbl { font-size: 13px; color: #6b7280; }
+  .stat-card-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .stat-val { font-size: 22px; font-weight: 800; color: var(--c1); }
+  .admin-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+  .admin-card { background: #fff; border-radius: 16px; border: 1px solid rgba(179,207,229,.3); overflow: hidden; }
+  .admin-card-header { padding: 18px 20px; border-bottom: 1px solid rgba(179,207,229,.2); font-weight: 700; color: var(--c1); font-size: 14px; }
+  .admin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .admin-table th { padding: 10px 16px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #9ca3af; background: var(--c5); font-weight: 700; }
+  .admin-table td { padding: 12px 16px; border-top: 1px solid rgba(179,207,229,.15); color: #374151; }
+  .admin-table tr:hover td { background: var(--c5); }
+  .action-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 7px; font-size: 11.5px; font-weight: 700; border: none; cursor: pointer; transition: all .15s; }
+  .btn-verify { background: #dcfce7; color: #166534; } .btn-verify:hover { background: #bbf7d0; }
+  .btn-reject { background: #fee2e2; color: #991b1b; } .btn-reject:hover { background: #fecaca; }
+  .btn-del { background: #fee2e2; color: #991b1b; } .btn-del:hover { background: #fecaca; }
+  .mini-chart { padding: 20px; }
+  .chart-bar-wrap { display: flex; align-items: flex-end; gap: 8px; height: 100px; }
+  .chart-bar { background: var(--c3); border-radius: 6px 6px 0 0; flex: 1; min-width: 20px; transition: all .3s; position: relative; }
+  .chart-bar:hover { background: var(--c2); }
+  .chart-labels { display: flex; gap: 8px; margin-top: 8px; }
+  .chart-labels span { flex: 1; text-align: center; font-size: 10px; color: #9ca3af; }
+
+  /* ====== CTA SECTION ====== */
+  .cta-section { background: var(--c1); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content:''; position: absolute; inset: 0; opacity: .2; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%234A7FA7' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .cta-section h2 { font-family: var(--font-d); font-size: 38px; color: #fff; margin-bottom: 14px; position: relative; }
+  .cta-section p { color: var(--c4); font-size: 15px; margin-bottom: 32px; position: relative; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .cta-btns a { padding: 14px 32px; border-radius: 12px; font-weight: 800; font-size: 14.5px; text-decoration: none; transition: all .25s; }
+
+  /* ====== FOOTER ====== */
+  footer { background: var(--c1); padding: 60px 24px 24px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand p { color: rgba(179,207,229,.65); font-size: 13px; line-height: 1.7; margin: 14px 0; max-width: 300px; }
+  .footer-addr { display: flex; gap: 8px; color: rgba(179,207,229,.65); font-size: 12.5px; }
+  .footer-heading { color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 16px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { color: rgba(179,207,229,.65); text-decoration: none; font-size: 13px; transition: color .2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-contact { display: flex; flex-direction: column; gap: 12px; }
+  .footer-contact-item { display: flex; align-items: center; gap: 8px; color: rgba(179,207,229,.65); font-size: 13px; }
+  .footer-contact-item a { color: rgba(179,207,229,.65); text-decoration: none; }
+  .footer-contact-item a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(26,61,99,.8); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { color: rgba(179,207,229,.4); font-size: 12px; }
+  .footer-bottom .italic { font-family: var(--font-d); color: var(--c3); font-style: italic; }
+
+  /* ====== MODAL ====== */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 200; display: none; align-items: center; justify-content: center; padding: 20px; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: #fff; border-radius: 20px; width: 100%; max-width: 440px; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+  .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid #f3f4f6; }
+  .modal-header h3 { font-weight: 800; color: var(--c1); }
+  .modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: #9ca3af; }
+  .modal-close:hover { color: var(--c1); }
+  .modal-body { padding: 24px; }
+  .modal-btn { width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--c3); color: #fff; padding: 13px; border-radius: 11px; font-weight: 700; font-size: 14px; border: none; cursor: pointer; margin-top: 16px; transition: all .2s; }
+  .modal-btn:hover { background: var(--c2); }
+  .file-input-label { display: flex; align-items: center; gap: 8px; border: 2px dashed rgba(74,127,167,.35); border-radius: 10px; padding: 12px 16px; color: var(--c3); font-size: 13.5px; font-weight: 600; cursor: pointer; transition: all .2s; }
+  .file-input-label:hover { border-color: var(--c3); background: rgba(74,127,167,.05); }
+  .file-input-label input { display: none; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-inner, .about-grid, .form-grid, .kontak-grid, .footer-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 42px; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .admin-grid { grid-template-columns: 1fr; }
+    .inc-grid { grid-template-columns: repeat(2, 1fr); }
+    .admin-layout { flex-direction: column; }
+    .sidebar { width: 100%; min-height: auto; }
+    .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .inc-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 34px; }
+    .pay-options, .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* Toast */
+  .toast { position: fixed; bottom: 24px; right: 24px; background: var(--c1); color: #fff; padding: 14px 20px; border-radius: 12px; font-size: 13.5px; font-weight: 600; z-index: 1000; transform: translateY(80px); opacity: 0; transition: all .3s; box-shadow: 0 8px 24px rgba(0,0,0,.2); display: flex; align-items: center; gap: 8px; }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.success::before { content: '✓'; width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#" onclick="showPage('home')">
+      <div class="logo-icon">A</div>
+      <div class="logo-text">
+        <div class="t1">ASTANA</div>
+        <div class="t2">Hajj & Umroh Travel</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#" onclick="showPage('home')">Beranda</a>
+      <a href="#" onclick="showPage('paket')">Paket Umroh</a>
+      <a href="#" onclick="showPage('tracking')">Cek Status</a>
+      <a href="#" onclick="showPage('kontak')">Kontak</a>
+    </div>
+    <div class="nav-ctas">
+      <a href="https://wa.me/6281235270809" target="_blank" class="btn-wa">📱 WhatsApp</a>
+      <a href="#" onclick="showPage('daftar')" class="btn-daftar">Daftar Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="page-home" class="page active">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-blob1"></div>
+    <div class="hero-blob2"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">Kuota Resmi KEMENHAJ RI 2026</div>
+        <p class="hero-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+        <h1>ASTANA<span>Hajj & Umroh</span><span style="font-size:46px">Travel</span></h1>
+        <p class="hero-tagline">"Perjalanan Satu Anda, Komitmen Kami"</p>
+        <p class="hero-desc">Memberikan perjalanan ibadah yang aman, terjamin, berkualitas, dan nyaman sesuai tuntunan Sunnah. Berangkat dari Lamongan, Jawa Timur.</p>
+        <div class="hero-btns">
+          <a href="#" onclick="showPage('paket')" class="btn-primary-hero">✈️ Lihat Paket Umroh</a>
+          <a href="https://wa.me/6281235270809" target="_blank" class="btn-green-hero">📱 Konsultasi Gratis</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><div class="val">10+</div><div class="lbl">Tahun Berpengalaman</div></div>
+          <div class="stat-item"><div class="val">500+</div><div class="lbl">Jamaah Diberangkatkan</div></div>
+          <div class="stat-item"><div class="val">99%</div><div class="lbl">Kepuasan Jamaah</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="pkg-card">
+          <div class="pkg-card-title">✈️ Jadwal Keberangkatan 2026</div>
+          <div class="pkg-item" onclick="selectPackage(1)"><div><div class="date">01 Juli 2026</div><div class="sub">16 Hari · Lion Air Premium</div></div><div><div class="price">Rp 28.500.000</div><div class="price-sub">/jamaah</div></div></div>
+          <div class="pkg-item" onclick="selectPackage(2)"><div><div class="date">15 Juli 2026</div><div class="sub">16 Hari · Lion Air Premium</div></div><div><div class="price">Rp 29.500.000</div><div class="price-sub">/jamaah</div></div></div>
+          <div class="pkg-item" onclick="selectPackage(3)"><div><div class="date">01 Agustus 2026</div><div class="sub">16 Hari · Lion Air Premium</div></div><div><div class="price">Rp 31.500.000</div><div class="price-sub">/jamaah</div></div></div>
+          <div class="pkg-item" onclick="selectPackage(4)"><div><div class="date">05 September 2026</div><div class="sub">16 Hari · Lion Air Premium</div></div><div><div class="price">Rp 34.500.000</div><div class="price-sub">/jamaah</div></div></div>
+          <a href="#" onclick="showPage('daftar')" class="pkg-cta">Daftar Sekarang →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Banner -->
+  <div class="legal-banner">
+    <div class="legal-inner">
+      <span>✓ Kuota Resmi KEMENHAJ RI</span>
+      <span>✓ Pembimbing Bersertifikat Syariat</span>
+      <span>✓ Fasilitas VIP Movenpick</span>
+      <span>✓ Setoran Awal 4.000 USD</span>
+      <span>✓ Lion Air Premium Direct</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="section" style="background:#F6FAFD">
+    <div class="section-inner">
+      <div class="text-center">
+        <span class="section-badge">Keunggulan Kami</span>
+        <h2 class="section-title">Mengapa Pilih ASTANA?</h2>
+        <p class="section-sub">Kami hadir dengan komitmen penuh memberikan pengalaman ibadah terbaik bagi setiap jamaah.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card"><div class="feat-icon">🛡️</div><div class="feat-title">Legalitas Resmi</div><div class="feat-desc">Terdaftar resmi di KEMENHAJ RI dengan kuota pasti setiap tahunnya.</div></div>
+        <div class="feat-card"><div class="feat-icon">⭐</div><div class="feat-title">Hotel VIP</div><div class="feat-desc">Fasilitas hotel bintang 3 hingga VIP Movenpick untuk paket premium.</div></div>
+        <div class="feat-card"><div class="feat-icon">👨‍🏫</div><div class="feat-title">Pembimbing Berpengalaman</div><div class="feat-desc">Dibimbing ustadz berpengalaman sesuai tuntunan Sunnah Rasulullah ﷺ.</div></div>
+        <div class="feat-card"><div class="feat-icon">✈️</div><div class="feat-title">Penerbangan Langsung</div><div class="feat-desc">Lion Air Premium Direct tanpa transit, nyaman dan efisien.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" style="background:#fff">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <span class="section-badge">Tentang Kami</span>
+          <h2 class="section-title">Amanah Dalam Setiap <span style="color:var(--c3)">Langkah Ibadah</span></h2>
+          <p style="color:#6b7280;font-size:14px;line-height:1.75;margin-bottom:14px">ASTANA HAJJ & UMROH TRAVEL adalah perusahaan travel ibadah yang berdiri di Paciran, Lamongan, Jawa Timur. Dengan pengalaman lebih dari 10 tahun, kami telah memberangkatkan ratusan jamaah ke Tanah Suci dengan selamat dan berkah.</p>
+          <p style="color:#6b7280;font-size:14px;line-height:1.75">Visi kami adalah memberikan perjalanan ibadah yang aman, terjamin, berkualitas, dan nyaman sesuai tuntunan Sunnah Rasulullah ﷺ.</p>
+          <ul class="check-list">
+            <li>Izin resmi dari Kementerian Agama RI</li>
+            <li>Pembimbing ustadz berpengalaman & bersertifikat</li>
+            <li>Hotel strategis dekat Masjidil Haram & Nabawi</li>
+            <li>Pengurusan visa & dokumen lengkap</li>
+            <li>Asuransi perjalanan untuk semua jamaah</li>
+          </ul>
+        </div>
+        <div>
+          <div class="about-card">
+            <div class="about-card-title">Paket Terjangkau, Ibadah Berkualitas</div>
+            <div class="about-pkg-row"><div><div class="adate">01 Juli 2026</div><div class="asub">16 Hari · Direct</div></div><div class="aprice">Rp 28.500.000</div></div>
+            <div class="about-pkg-row"><div><div class="adate">15 Juli 2026</div><div class="asub">16 Hari · Direct</div></div><div class="aprice">Rp 29.500.000</div></div>
+            <div class="about-pkg-row"><div><div class="adate">01 Agustus 2026</div><div class="asub">16 Hari · Direct</div></div><div class="aprice">Rp 31.500.000</div></div>
+            <div class="about-pkg-row"><div><div class="adate">05 September 2026</div><div class="asub">16 Hari · Direct</div></div><div class="aprice">Rp 34.500.000</div></div>
+            <a href="#" onclick="showPage('paket')" class="about-cta">Lihat Detail Paket →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Wujudkan Impian Umroh Anda Bersama Kami</h2>
+    <p>Segera daftarkan diri Anda dan dapatkan porsi keberangkatan terjamin dengan setoran awal hanya 4.000 USD.</p>
+    <div class="cta-btns">
+      <a href="#" onclick="showPage('daftar')" style="background:var(--c3);color:#fff">Daftar Sekarang ›</a>
+      <a href="#" onclick="showPage('kontak')" style="border:2px solid var(--c3);color:var(--c4)">Hubungi Kami</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom:4px"><div class="logo-icon">A</div><div class="logo-text"><div class="t1">ASTANA</div><div class="t2">Hajj & Umroh Travel</div></div></div>
+          <p>Memberikan perjalanan ibadah yang aman, terjamin, berkualitas, dan nyaman sesuai tuntunan Sunnah.</p>
+          <div class="footer-addr">📍 Jl. Pondok No. 30, Paciran, Lamongan, Jawa Timur</div>
+        </div>
+        <div>
+          <div class="footer-heading">Navigasi</div>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('home')">Beranda</a></li>
+            <li><a href="#" onclick="showPage('paket')">Paket Umroh</a></li>
+            <li><a href="#" onclick="showPage('daftar')">Pendaftaran</a></li>
+            <li><a href="#" onclick="showPage('tracking')">Cek Status Jamaah</a></li>
+            <li><a href="#" onclick="showPage('kontak')">Hubungi Kami</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Kontak</div>
+          <div class="footer-contact">
+            <div class="footer-contact-item">📱 <a href="#">0812-352-70809</a></div>
+            <div class="footer-contact-item">✉️ <a href="#">astanatourpaciran@gmail.com</a></div>
+          </div>
+          <div style="margin-top:20px">
+            <p style="color:rgba(179,207,229,.5);font-size:11px;margin-bottom:8px">Legalitas:</p>
+            <div style="color:var(--c3);font-size:12px;line-height:2">✓ Kuota Resmi KEMENHAJ RI<br>✓ Setoran Awal 4.000 USD</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ASTANA HAJJ & UMROH TRAVEL. All rights reserved.</p>
+        <p class="italic">"Perjalanan Satu Anda, Komitmen Kami"</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ==================== PAKET PAGE ==================== -->
+<div id="page-paket" class="page">
+  <div style="padding-top:68px">
+    <div class="page-header">
+      <span class="badge">Keberangkatan 2026</span>
+      <h1>Paket Umroh Kami</h1>
+      <p>Pilih jadwal yang sesuai dengan Anda. Semua paket menggunakan Lion Air Premium penerbangan langsung.</p>
+    </div>
+    <section class="section" style="background:var(--c5)">
+      <div class="section-inner">
+        <div class="table-wrap" style="margin-bottom:16px">
+          <table>
+            <thead><tr>
+              <th>Keberangkatan</th><th>Hotel Mekkah</th><th>Hotel Madinah</th><th>Durasi</th><th>Harga</th><th>DP (50%)</th><th style="text-align:center">Aksi</th>
+            </tr></thead>
+            <tbody>
+              <tr><td><div class="td-date">01 Juli 2026<span>✈️ Lion Air Premium (Direct)</span></div></td><td><div class="td-hotel">Snoed / Srtf ★★★</div></td><td><div class="td-hotel">Nada Salam / Srtf ★★★</div></td><td>⏱ 16 Hari</td><td><div class="td-harga">Rp 28.500.000</div></td><td><div class="td-dp">Rp 14.250.000</div></td><td style="text-align:center"><button class="btn-pilih" onclick="selectPackage(1)">Pilih Paket ›</button></td></tr>
+              <tr><td><div class="td-date">15 Juli 2026<span>✈️ Lion Air Premium (Direct)</span></div></td><td><div class="td-hotel">Daefa / Rehab</div></td><td><div class="td-hotel">Nada Salam / Taqwa</div></td><td>⏱ 16 Hari</td><td><div class="td-harga">Rp 29.500.000</div></td><td><div class="td-dp">Rp 14.750.000</div></td><td style="text-align:center"><button class="btn-pilih" onclick="selectPackage(2)">Pilih Paket ›</button></td></tr>
+              <tr><td><div class="td-date">01 Agustus 2026<span>✈️ Lion Air Premium (Direct)</span></div></td><td><div class="td-hotel">Daefa / Rehab</div></td><td><div class="td-hotel">Nada Salam / Taqwa</div></td><td>⏱ 16 Hari</td><td><div class="td-harga">Rp 31.500.000</div></td><td><div class="td-dp">Rp 15.750.000</div></td><td style="text-align:center"><button class="btn-pilih" onclick="selectPackage(3)">Pilih Paket ›</button></td></tr>
+              <tr><td><div class="td-date">05 September 2026<span>✈️ Lion Air Premium (Direct)</span></div></td><td><div class="td-hotel">Daefa / Rehab</div></td><td><div class="td-hotel">Nada Salam / Taqwa</div></td><td>⏱ 16 Hari</td><td><div class="td-harga">Rp 34.500.000</div></td><td><div class="td-dp">Rp 17.250.000</div></td><td style="text-align:center"><button class="btn-pilih" onclick="selectPackage(4)">Pilih Paket ›</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="background:rgba(74,127,167,.1);border:1px solid rgba(74,127,167,.2);border-radius:12px;padding:14px 18px;font-size:12.5px;color:var(--c2)"><strong>Catatan:</strong> Harga sudah termasuk biaya pengurusan visa, tiket pesawat PP, akomodasi hotel, dan pembimbing. Setoran awal 4.000 USD langsung dapat porsi resmi.</div>
+      </div>
+    </section>
+    <section class="section" style="background:#fff">
+      <div class="section-inner">
+        <div class="text-center">
+          <h2 class="section-title">Yang Sudah Termasuk</h2>
+          <p class="section-sub" style="margin:0 auto 40px">Semua kebutuhan ibadah Anda sudah kami siapkan</p>
+        </div>
+        <div class="inc-grid">
+          <div class="inc-item">Tiket pesawat PP Lion Air Premium</div>
+          <div class="inc-item">Hotel bintang 3 di Mekkah & Madinah</div>
+          <div class="inc-item">Visa Umroh & dokumen perjalanan</div>
+          <div class="inc-item">Pembimbing ibadah berpengalaman</div>
+          <div class="inc-item">Muthawif selama di Tanah Suci</div>
+          <div class="inc-item">Konsumsi 3x sehari di hotel</div>
+          <div class="inc-item">Asuransi perjalanan jamaah</div>
+          <div class="inc-item">Transportasi AC selama tour</div>
+          <div class="inc-item">Perlengkapan umroh lengkap</div>
+          <div class="inc-item">Manasik umroh sebelum berangkat</div>
+          <div class="inc-item">Ziarah Mekkah & Madinah</div>
+          <div class="inc-item">Handling & airport tax</div>
+        </div>
+        <div style="text-align:center;margin-top:40px">
+          <button class="btn-pilih" style="padding:14px 36px;font-size:14px;border-radius:12px" onclick="showPage('daftar')">Daftar Sekarang ›</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ==================== DAFTAR PAGE ==================== -->
+<div id="page-daftar" class="page">
+  <div style="padding-top:68px">
+    <div class="page-header">
+      <h1>Form Pendaftaran Umroh</h1>
+      <p>Lengkapi data diri Anda untuk mendapatkan porsi keberangkatan</p>
+    </div>
+    <section class="section" style="background:var(--c5)">
+      <div class="section-inner">
+        <div class="form-grid">
+          <div>
+            <!-- Pribadi -->
+            <div class="form-card">
+              <div class="form-section-title">👤 Data Pribadi Jamaah</div>
+              <div class="form-row">
+                <div class="form-group" style="grid-column:1/-1"><label>Nama Lengkap (sesuai KTP/Paspor) *</label><input type="text" id="f-nama" placeholder="Nama sesuai dokumen resmi"></div>
+                <div class="form-group"><label>Nomor KTP / Paspor *</label><input type="text" id="f-ktp" placeholder="16 digit KTP / Nomor Paspor"></div>
+                <div class="form-group"><label>Tanggal Lahir *</label><input type="date" id="f-tgl"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>Alamat Lengkap *</label><textarea id="f-alamat" rows="3" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota"></textarea></div>
+                <div class="form-group"><label>Nomor WhatsApp *</label><input type="text" id="f-wa" placeholder="08xxxxxxxxxx"></div>
+              </div>
+            </div>
+            <!-- Paket -->
+            <div class="form-card">
+              <div class="form-section-title">📦 Pilih Paket</div>
+              <div class="form-group">
+                <label>Paket Keberangkatan *</label>
+                <select id="f-paket" onchange="updateSummary()">
+                  <option value="">-- Pilih Paket --</option>
+                  <option value="1" data-harga="28500000">01 Juli 2026 — Rp 28.500.000</option>
+                  <option value="2" data-harga="29500000">15 Juli 2026 — Rp 29.500.000</option>
+                  <option value="3" data-harga="31500000">01 Agustus 2026 — Rp 31.500.000</option>
+                  <option value="4" data-harga="34500000">05 September 2026 — Rp 34.500.000</option>
+                </select>
+              </div>
+            </div>
+            <!-- Pembayaran -->
+            <div class="form-card">
+              <div class="form-section-title">💳 Jenis Pembayaran</div>
+              <div class="pay-options">
+                <div class="pay-opt selected" onclick="selectPayType('DP',this)"><div class="pay-opt-label">DP 50%</div><div class="pay-opt-sub">Bayar 50% sekarang</div></div>
+                <div class="pay-opt" onclick="selectPayType('CICILAN',this)"><div class="pay-opt-label">Cicilan</div><div class="pay-opt-sub">DP 50% + 3x cicilan</div></div>
+                <div class="pay-opt" onclick="selectPayType('LUNAS',this)"><div class="pay-opt-label">Lunas</div><div class="pay-opt-sub">Bayar penuh sekarang</div></div>
+              </div>
+            </div>
+          </div>
+          <!-- Summary -->
+          <div>
+            <div class="summary-card">
+              <div class="summary-title">Ringkasan Pendaftaran</div>
+              <div id="summary-content">
+                <p style="color:rgba(179,207,229,.5);font-size:13px">Pilih paket dan metode pembayaran untuk melihat ringkasan.</p>
+              </div>
+              <button class="btn-submit" onclick="submitDaftar()">✅ Daftar Sekarang</button>
+            </div>
+            <div style="background:#fff;border-radius:14px;border:1px solid rgba(179,207,229,.3);padding:16px;margin-top:14px;font-size:13px;color:#6b7280">
+              <p style="font-weight:700;color:var(--c1);margin-bottom:8px">Butuh bantuan?</p>
+              <a href="https://wa.me/6281235270809" target="_blank" style="color:#16a34a;font-weight:600">Hubungi kami via WhatsApp →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ==================== INVOICE PAGE ==================== -->
+<div id="page-invoice" class="page">
+  <div style="padding-top:68px">
+    <div class="section" style="background:var(--c5);padding-top:24px">
+      <div class="invoice-wrap">
+        <!-- Actions -->
+        <div class="inv-actions">
+          <div class="inv-no">No. Invoice<strong id="inv-nomor">AST/UMR/2026/1842</strong></div>
+          <div class="inv-btn-group">
+            <button class="inv-btn inv-btn-print" onclick="window.print()">🖨️ Print</button>
+            <button class="inv-btn inv-btn-dl" onclick="showToast('PDF berhasil diunduh!')">⬇️ Download PDF</button>
+            <button class="inv-btn inv-btn-wa" onclick="kirimWA()">💬 Kirim WA</button>
+            <button class="inv-btn inv-btn-pay" onclick="openPayModal()">📤 Upload Bukti</button>
+          </div>
+        </div>
+        <!-- Document -->
+        <div class="inv-doc">
+          <div class="inv-header">
+            <div>
+              <div class="inv-co-name">ASTANA HAJJ & UMROH TRAVEL</div>
+              <div class="inv-co-tag">Perjalanan Satu Anda, Komitmen Kami</div>
+              <div class="inv-co-addr">Jl. Pondok No. 30, Paciran, Lamongan, Jawa Timur<br>WA: 0812-352-70809 | astanatourpaciran@gmail.com</div>
+            </div>
+            <div class="inv-meta">
+              <div class="lbl">No. Invoice</div>
+              <div class="inv-num" id="inv-num-display">AST/UMR/2026/1842</div>
+              <div class="lbl" style="margin-top:10px">Tanggal</div>
+              <div class="val" id="inv-date">22 April 2026</div>
+              <div class="status-badge" id="inv-status">Menunggu Pembayaran</div>
+            </div>
+          </div>
+          <div class="inv-body">
+            <div class="inv-data-grid">
+              <div>
+                <div class="inv-section-title">Data Jamaah</div>
+                <dl class="inv-dl">
+                  <dt>Nama Lengkap</dt><dd id="inv-nama">Ahmad Fauzi</dd>
+                  <dt>KTP / Paspor</dt><dd id="inv-ktp">3521234567890001</dd>
+                  <dt>Tanggal Lahir</dt><dd id="inv-ttl">15 Maret 1985</dd>
+                  <dt>WhatsApp</dt><dd id="inv-wa">0812-352-70809</dd>
+                  <dt>Alamat</dt><dd id="inv-alamat">Jl. Mawar No.5, Paciran, Lamongan</dd>
+                </dl>
+              </div>
+              <div>
+                <div class="inv-section-title">Detail Paket</div>
+                <dl class="inv-dl">
+                  <dt>Keberangkatan</dt><dd id="inv-paket">01 Juli 2026</dd>
+                  <dt>Hotel Mekkah</dt><dd>Snoed / Srtf ★★★</dd>
+                  <dt>Hotel Madinah</dt><dd>Nada Salam / Srtf ★★★</dd>
+                  <dt>Durasi</dt><dd>16 Hari</dd>
+                  <dt>Maskapai</dt><dd>Lion Air Premium (Direct)</dd>
+                </dl>
+              </div>
+            </div>
+            <div class="inv-section-title">Rincian Pembayaran</div>
+            <div class="inv-pay-box">
+              <div class="inv-pay-row"><span class="lbl">Total Harga Paket</span><span id="inv-total">Rp 28.500.000</span></div>
+              <div class="inv-pay-row"><span class="lbl">Metode Pembayaran</span><span id="inv-metode">DP 50%</span></div>
+              <div class="inv-pay-row"><span class="lbl">Total Dibayar</span><span style="color:#16a34a;font-weight:700" id="inv-paid">Rp 0</span></div>
+              <div class="inv-total-row"><span>Sisa Tagihan</span><span class="sisa" id="inv-sisa">Rp 28.500.000</span></div>
+            </div>
+            <div style="border:1px solid rgba(74,127,167,.2);border-radius:14px;padding:20px;background:var(--c5)">
+              <p style="font-weight:700;font-size:14px;color:var(--c1);margin-bottom:10px">Informasi Pembayaran</p>
+              <p style="font-size:13px;color:#6b7280;margin-bottom:10px">Transfer ke rekening berikut:</p>
+              <div style="font-size:13px;display:flex;flex-direction:column;gap:5px">
+                <div><span style="color:#9ca3af">Bank:</span> <strong>Bank Syariah Indonesia</strong></div>
+                <div><span style="color:#9ca3af">No. Rekening:</span> <strong style="font-size:16px;color:var(--c1)">7123456789</strong></div>
+                <div><span style="color:#9ca3af">Atas Nama:</span> <strong>ASTANA HAJJ & UMROH TRAVEL</strong></div>
+              </div>
+              <p style="font-size:11.5px;color:#9ca3af;margin-top:12px">Mohon cantumkan nomor invoice pada keterangan transfer: <strong id="inv-keterangan">AST/UMR/2026/1842</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== TRACKING PAGE ==================== -->
+<div id="page-tracking" class="page">
+  <div style="padding-top:68px">
+    <div class="page-header">
+      <h1>Cek Status Jamaah</h1>
+      <p>Masukkan nomor invoice dan WhatsApp untuk melihat status pendaftaran Anda</p>
+    </div>
+    <section class="section" style="background:var(--c5)">
+      <div class="track-wrap">
+        <div class="track-form">
+          <div style="font-weight:700;color:var(--c1);margin-bottom:20px;font-size:15px">Cari Data Jamaah</div>
+          <div class="form-group"><label>Nomor Invoice</label><input type="text" id="t-inv" placeholder="Contoh: AST/UMR/2026/1842"></div>
+          <div class="form-group"><label>Nomor WhatsApp</label><input type="text" id="t-wa" placeholder="08xxxxxxxxxx"></div>
+          <button style="width:100%;background:var(--c1);color:#fff;padding:13px;border-radius:11px;font-weight:700;border:none;cursor:pointer;font-size:14px;transition:background .2s" onmouseover="this.style.background='#4A7FA7'" onmouseout="this.style.background='#0A1931'" onclick="doTracking()">🔍 Cek Status</button>
+        </div>
+        <div id="track-result" style="display:none" class="track-result">
+          <div class="track-result-header">
+            <div>
+              <div class="name" id="tr-name">Ahmad Fauzi</div>
+              <div class="inv">No Invoice: AST/UMR/2026/1842</div>
+            </div>
+            <span class="status-badge" id="tr-status" style="background:#fef9c3;color:#854d0e">Menunggu Bayar</span>
+          </div>
+          <div class="track-body">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+              <div style="background:var(--c5);border-radius:12px;padding:16px"><div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Paket</div><div style="font-weight:700;color:var(--c1);font-size:14px">01 Juli 2026</div><div style="font-size:11px;color:#9ca3af">Snoed / Srtf ★★★</div></div>
+              <div style="background:var(--c5);border-radius:12px;padding:16px"><div style="font-size:12px;color:#9ca3af;margin-bottom:4px">Metode</div><div style="font-weight:700;color:var(--c1);font-size:14px">DP 50%</div><div style="font-size:11px;color:#9ca3af">Total: Rp 28.500.000</div></div>
+            </div>
+            <div style="margin-bottom:20px">
+              <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px"><span style="color:#6b7280">Progress Pembayaran</span><span style="font-weight:700;color:var(--c1)" id="tr-pct">0%</span></div>
+              <div class="progress-bar"><div class="progress-fill" id="tr-bar" style="width:0%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af;margin-top:4px"><span>Dibayar: <span id="tr-bayar">Rp 0</span></span><span>Sisa: <span id="tr-sisa">Rp 28.500.000</span></span></div>
+            </div>
+            <div style="display:flex;gap:10px">
+              <button onclick="showPage('invoice')" style="flex:1;background:var(--c1);color:#fff;padding:12px;border-radius:10px;font-weight:700;border:none;cursor:pointer;font-size:13px">Lihat Invoice ›</button>
+              <button onclick="openPayModal()" style="flex:1;background:var(--c3);color:#fff;padding:12px;border-radius:10px;font-weight:700;border:none;cursor:pointer;font-size:13px">📤 Upload Bukti</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ==================== KONTAK PAGE ==================== -->
+<div id="page-kontak" class="page">
+  <div style="padding-top:68px">
+    <div class="page-header">
+      <h1>Hubungi Kami</h1>
+      <p>Kami siap membantu Anda merencanakan perjalanan ibadah yang berkesan</p>
+    </div>
+    <section class="section" style="background:var(--c5)">
+      <div class="section-inner">
+        <div class="kontak-grid">
+          <div>
+            <h2 class="section-title" style="margin-bottom:28px">Informasi Kontak</h2>
+            <div class="kontak-item"><div class="kontak-icon">📍</div><div><div class="kontak-label">Alamat Kantor</div><div class="kontak-val">Jl. Pondok No. 30, Paciran, Lamongan, Jawa Timur</div><div class="kontak-sub">Kunjungi kami pada jam operasional</div></div></div>
+            <div class="kontak-item"><div class="kontak-icon">📱</div><div><div class="kontak-label">WhatsApp</div><div class="kontak-val"><a href="https://wa.me/6281235270809" target="_blank">0812-352-70809</a></div><div class="kontak-sub">Hubungi untuk konsultasi gratis</div></div></div>
+            <div class="kontak-item"><div class="kontak-icon">✉️</div><div><div class="kontak-label">Email</div><div class="kontak-val"><a href="mailto:astanatourpaciran@gmail.com">astanatourpaciran@gmail.com</a></div><div class="kontak-sub">Kirim pertanyaan melalui email</div></div></div>
+            <div class="kontak-item"><div class="kontak-icon">🕐</div><div><div class="kontak-label">Jam Operasional</div><div class="kontak-val">Senin – Sabtu: 08.00 – 17.00 WIB</div><div class="kontak-sub">Ahad & hari libur nasional: tutup</div></div></div>
+            <a href="https://wa.me/6281235270809" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#16a34a;color:#fff;padding:15px;border-radius:14px;font-weight:800;font-size:14px;text-decoration:none;transition:background .2s;margin-top:8px" onmouseover="this.style.background='#15803d'" onmouseout="this.style.background='#16a34a'">💬 Chat WhatsApp Sekarang</a>
+          </div>
+          <div>
+            <div class="map-placeholder">🗺️<p>Paciran, Lamongan, Jawa Timur</p></div>
+            <div class="consult-box" style="margin-top:20px">
+              <h3>Konsultasi Umroh Gratis</h3>
+              <p>Ingin tahu lebih lanjut tentang paket umroh kami? Tim kami siap membantu memilih paket terbaik sesuai kebutuhan dan budget Anda.</p>
+              <ul class="consult-list">
+                <li>Konsultasi gratis tanpa syarat</li>
+                <li>Informasi lengkap paket & harga</li>
+                <li>Panduan dokumen & persyaratan</li>
+                <li>Estimasi biaya & jadwal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ==================== ADMIN PAGE ==================== -->
+<div id="page-admin" class="page">
+  <div class="admin-layout" style="padding-top:68px;min-height:calc(100vh - 68px)">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon" style="width:34px;height:34px;font-size:15px">A</div>
+        <div><div class="sname">ASTANA</div><div class="stag">Admin Panel</div></div>
+      </div>
+      <div class="sidebar-nav">
+        <a class="nav-item active" onclick="adminTab('dashboard',this)"><span class="icon">📊</span> Dashboard</a>
+        <a class="nav-item" onclick="adminTab('pendaftar',this)"><span class="icon">👥</span> Rekap Pendaftar</a>
+        <a class="nav-item" onclick="adminTab('pembayaran',this)"><span class="icon">💳</span> Pembayaran</a>
+        <a class="nav-item" onclick="adminTab('pengaturan',this)"><span class="icon">⚙️</span> Pengaturan</a>
+      </div>
+      <div class="sidebar-footer">
+        <div class="sidebar-user"><div class="uname">Administrator</div>admin@astana.com</div>
+        <button class="btn-logout" onclick="showPage('home')">🚪 Keluar</button>
+      </div>
+    </div>
+    <!-- Main -->
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <div class="title" id="admin-page-title">Dashboard</div>
+        <a href="#" onclick="showPage('home')" style="font-size:12.5px;color:var(--c3);text-decoration:none">Lihat Website →</a>
+      </div>
+      <div class="admin-content">
+        <!-- Dashboard Tab -->
+        <div id="atab-dashboard">
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Total Pendaftar</div><div class="stat-card-icon" style="background:#eff6ff">👥</div></div><div class="stat-val">12</div></div>
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Total Pemasukan</div><div class="stat-card-icon" style="background:#f0fdf4">💰</div></div><div class="stat-val" style="font-size:16px">Rp 158jt</div></div>
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Pending Verifikasi</div><div class="stat-card-icon" style="background:#fefce8">⏳</div></div><div class="stat-val" style="color:#d97706">3</div></div>
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Sudah Lunas</div><div class="stat-card-icon" style="background:#f0fdf4">✅</div></div><div class="stat-val" style="color:#16a34a">5</div></div>
+          </div>
+          <div class="admin-grid">
+            <div class="admin-card">
+              <div class="admin-card-header">Pemasukan Bulanan</div>
+              <div class="mini-chart">
+                <div class="chart-bar-wrap">
+                  <div class="chart-bar" style="height:40%"></div>
+                  <div class="chart-bar" style="height:65%"></div>
+                  <div class="chart-bar" style="height:45%"></div>
+                  <div class="chart-bar" style="height:80%"></div>
+                  <div class="chart-bar" style="height:55%"></div>
+                  <div class="chart-bar" style="height:70%"></div>
+                </div>
+                <div class="chart-labels">
+                  <span>Nov</span><span>Des</span><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+                </div>
+              </div>
+            </div>
+            <div class="admin-card">
+              <div class="admin-card-header">Per Paket</div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+                <div style="background:var(--c5);border-radius:10px;padding:12px"><div style="font-size:12px;font-weight:700;color:var(--c1)">01 Juli 2026</div><div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af;margin-top:4px"><span>5 pendaftar</span><span>2 lunas</span></div></div>
+                <div style="background:var(--c5);border-radius:10px;padding:12px"><div style="font-size:12px;font-weight:700;color:var(--c1)">15 Juli 2026</div><div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af;margin-top:4px"><span>4 pendaftar</span><span>2 lunas</span></div></div>
+                <div style="background:var(--c5);border-radius:10px;padding:12px"><div style="font-size:12px;font-weight:700;color:var(--c1)">01 Agustus 2026</div><div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af;margin-top:4px"><span>3 pendaftar</span><span>1 lunas</span></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="admin-card" style="margin-top:20px">
+            <div class="admin-card-header">Pendaftaran Terbaru</div>
+            <table class="admin-table">
+              <thead><tr><th>Nama</th><th>Paket</th><th>Total</th><th>Status</th><th>Tanggal</th></tr></thead>
+              <tbody>
+                <tr><td><div style="font-weight:600;color:var(--c1)">Ahmad Fauzi</div><div style="font-size:11px;color:#9ca3af">0812-352-70809</div></td><td>01 Juli 2026</td><td>Rp 28.500.000</td><td><span style="background:#fef9c3;color:#854d0e;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px">Menunggu Bayar</span></td><td style="color:#9ca3af">20 Apr 2026</td></tr>
+                <tr><td><div style="font-weight:600;color:var(--c1)">Siti Aisyah</div><div style="font-size:11px;color:#9ca3af">0813-111-22333</div></td><td>15 Juli 2026</td><td>Rp 29.500.000</td><td><span style="background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px">DP Lunas</span></td><td style="color:#9ca3af">18 Apr 2026</td></tr>
+                <tr><td><div style="font-weight:600;color:var(--c1)">Budi Santoso</div><div style="font-size:11px;color:#9ca3af">0811-999-88776</div></td><td>01 Agustus 2026</td><td>Rp 31.500.000</td><td><span style="background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px">Lunas</span></td><td style="color:#9ca3af">15 Apr 2026</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Pendaftar Tab -->
+        <div id="atab-pendaftar" style="display:none">
+          <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+            <input type="text" placeholder="🔍 Cari nama / WhatsApp..." style="flex:1;min-width:200px;padding:10px 14px;border:1.5px solid var(--c4);border-radius:10px;font-family:var(--font-b);font-size:13px">
+            <select style="padding:10px 14px;border:1.5px solid var(--c4);border-radius:10px;font-family:var(--font-b);font-size:13px"><option>Semua Status</option><option>Menunggu Bayar</option><option>DP Lunas</option><option>Lunas</option></select>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header" style="display:flex;justify-content:space-between"><span>Rekap Pendaftar (12 total)</span></div>
+            <table class="admin-table">
+              <thead><tr><th>Jamaah</th><th>Paket</th><th>Pembayaran</th><th>Status</th><th>Invoice</th><th>Aksi</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><div style="font-weight:600;color:var(--c1)">Ahmad Fauzi</div><div style="font-size:11px;color:#9ca3af">0812-352-70809</div><div style="font-size:11px;color:#9ca3af">3521234567890001</div></td>
+                  <td><div style="font-size:13px">01 Juli 2026</div><div style="font-size:11px;color:#9ca3af">Snoed / Srtf ★★★</div></td>
+                  <td><div style="font-weight:700">Rp 0</div><div style="font-size:11px;color:#9ca3af">dari Rp 28.500.000</div><div style="font-size:11px;color:#9ca3af">DP</div></td>
+                  <td><span style="background:#fef9c3;color:#854d0e;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px">Menunggu Bayar</span></td>
+                  <td><a href="#" onclick="showPage('invoice')" style="font-size:12px;color:var(--c3)">1842 ↗</a></td>
+                  <td><div style="display:flex;gap:6px"><button class="action-btn btn-verify" onclick="showToast('Pembayaran terverifikasi!')">✓ Verif</button><button class="action-btn btn-del" onclick="showToast('Data dihapus')">🗑</button></div></td>
+                </tr>
+                <tr>
+                  <td><div style="font-weight:600;color:var(--c1)">Siti Aisyah</div><div style="font-size:11px;color:#9ca3af">0813-111-22333</div></td>
+                  <td>15 Juli 2026</td>
+                  <td><div style="font-weight:700;color:#16a34a">Rp 14.750.000</div><div style="font-size:11px;color:#9ca3af">dari Rp 29.500.000</div></td>
+                  <td><span style="background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px">DP Lunas</span></td>
+                  <td><span style="font-size:12px;color:var(--c3)">1841 ↗</span></td>
+                  <td><div style="display:flex;gap:6px"><button class="action-btn btn-del" onclick="showToast('Data dihapus')">🗑</button></div></td>
+                </tr>
+                <tr>
+                  <td><div style="font-weight:600;color:var(--c1)">Budi Santoso</div><div style="font-size:11px;color:#9ca3af">0811-999-88776</div></td>
+                  <td>01 Agustus 2026</td>
+                  <td><div style="font-weight:700;color:#16a34a">Rp 31.500.000</div><div style="font-size:11px;color:#9ca3af">dari Rp 31.500.000</div></td>
+                  <td><span style="background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px">Lunas</span></td>
+                  <td><span style="font-size:12px;color:var(--c3)">1840 ↗</span></td>
+                  <td><div style="display:flex;gap:6px"><button class="action-btn btn-del" onclick="showToast('Data dihapus')">🗑</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Pembayaran Tab -->
+        <div id="atab-pembayaran" style="display:none">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px">
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Total Terverifikasi</div><div class="stat-card-icon" style="background:#f0fdf4">✅</div></div><div class="stat-val" style="color:#16a34a;font-size:18px">Rp 158.000.000</div></div>
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Menunggu Verifikasi</div><div class="stat-card-icon" style="background:#fefce8">⏳</div></div><div class="stat-val" style="color:#d97706;font-size:18px">Rp 43.250.000</div></div>
+            <div class="stat-card"><div class="stat-card-top"><div class="slbl">Total Ditolak</div><div class="stat-card-icon" style="background:#fef2f2">❌</div></div><div class="stat-val" style="color:#dc2626;font-size:18px">Rp 0</div></div>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+            <input type="date" style="padding:9px 14px;border:1.5px solid var(--c4);border-radius:10px;font-family:var(--font-b);font-size:13px">
+            <span style="align-self:center;color:#9ca3af">s/d</span>
+            <input type="date" style="padding:9px 14px;border:1.5px solid var(--c4);border-radius:10px;font-family:var(--font-b);font-size:13px">
+            <button onclick="showToast('Excel berhasil diunduh!')" style="display:flex;align-items:center;gap:6px;background:#16a34a;color:#fff;padding:9px 16px;border-radius:9px;border:none;cursor:pointer;font-weight:700;font-size:12.5px;margin-left:auto">⬇️ Export Excel</button>
+            <button onclick="showToast('PDF berhasil diunduh!')" style="display:flex;align-items:center;gap:6px;background:#dc2626;color:#fff;padding:9px 16px;border-radius:9px;border:none;cursor:pointer;font-weight:700;font-size:12.5px">⬇️ Export PDF</button>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card-header">Riwayat Transaksi</div>
+            <table class="admin-table">
+              <thead><tr><th>Tanggal</th><th>Jamaah</th><th>No Invoice</th><th>Jumlah</th><th>Keterangan</th><th>Status</th><th>Bukti</th></tr></thead>
+              <tbody>
+                <tr><td style="color:#9ca3af">18 Apr 2026</td><td><div style="font-weight:600;color:var(--c1)">Siti Aisyah</div></td><td style="font-family:monospace;font-size:12px;color:var(--c3)">AST/UMR/2026/1841</td><td style="font-weight:700">Rp 14.750.000</td><td style="color:#9ca3af">DP 50%</td><td><span class="badge-verified">Terverifikasi</span></td><td><a href="#" style="color:var(--c3);font-size:12px">Lihat →</a></td></tr>
+                <tr><td style="color:#9ca3af">20 Apr 2026</td><td><div style="font-weight:600;color:var(--c1)">Ahmad Fauzi</div></td><td style="font-family:monospace;font-size:12px;color:var(--c3)">AST/UMR/2026/1842</td><td style="font-weight:700">Rp 14.250.000</td><td style="color:#9ca3af">DP 50%</td><td><span class="badge-pending">Menunggu</span></td><td><a href="#" style="color:var(--c3);font-size:12px">Lihat →</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Pengaturan Tab -->
+        <div id="atab-pengaturan" style="display:none">
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div class="admin-card">
+              <div class="admin-card-header">⚙️ Pengaturan Umum</div>
+              <div style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                <div class="form-group"><label>Nama Bank</label><input value="Bank Syariah Indonesia"></div>
+                <div class="form-group"><label>No. Rekening</label><input value="7123456789"></div>
+                <div class="form-group"><label>Atas Nama</label><input value="ASTANA HAJJ & UMROH TRAVEL"></div>
+                <div class="form-group"><label>WhatsApp</label><input value="081235270809"></div>
+                <div class="form-group" style="grid-column:1/-1"><label>Alamat</label><input value="Jl. Pondok No. 30, Paciran, Lamongan, Jawa Timur"></div>
+              </div>
+            </div>
+            <div class="admin-card">
+              <div class="admin-card-header">🔲 Upload QRIS</div>
+              <div style="padding:24px;display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap">
+                <div style="border:1px solid rgba(179,207,229,.4);border-radius:12px;padding:12px;background:var(--c5);text-align:center">
+                  <div style="width:140px;height:140px;background:linear-gradient(135deg,#e0e7ef,#c7d9e8);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:48px">🔲</div>
+                  <p style="font-size:11px;color:#9ca3af;margin-top:8px">QRIS Saat Ini</p>
+                </div>
+                <div>
+                  <label style="font-size:13px;font-weight:600;color:#374151;margin-bottom:10px;display:block">Upload QRIS Baru</label>
+                  <label class="file-input-label"><input type="file" accept="image/*">📤 Pilih File Gambar</label>
+                  <p style="font-size:11px;color:#9ca3af;margin-top:8px">Format: JPG, PNG. Rekomendasi: 400×400px</p>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end">
+              <button onclick="showToast('Pengaturan berhasil disimpan!')" style="display:flex;align-items:center;gap:8px;background:var(--c1);color:#fff;padding:12px 28px;border-radius:11px;font-weight:700;font-size:13.5px;border:none;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#4A7FA7'" onmouseout="this.style.background='#0A1931'">💾 Simpan Pengaturan</button>
+            </div>
+            <div class="admin-card">
+              <div class="admin-card-header" style="display:flex;justify-content:space-between;align-items:center"><span>📦 Manajemen Paket</span><button onclick="showToast('Form tambah paket dibuka')" style="background:var(--c1);color:#fff;padding:7px 14px;border-radius:8px;border:none;cursor:pointer;font-size:12px;font-weight:700">+ Tambah Paket</button></div>
+              <table class="admin-table">
+                <thead><tr><th>Keberangkatan</th><th>Hotel Mekkah</th><th>Hotel Madinah</th><th>Harga</th><th>Durasi</th><th>Aksi</th></tr></thead>
+                <tbody>
+                  <tr><td style="font-weight:700;color:var(--c1)">01 Juli 2026</td><td>Snoed / Srtf ★★★</td><td>Nada Salam / Srtf ★★★</td><td style="font-weight:700">Rp 28.500.000</td><td>16 hari</td><td><div style="display:flex;gap:6px"><button class="action-btn" style="background:#eff6ff;color:#1d4ed8" onclick="showToast('Mode edit paket')">✏️ Edit</button><button class="action-btn btn-del" onclick="showToast('Paket dinonaktifkan')">Nonaktifkan</button></div></td></tr>
+                  <tr><td style="font-weight:700;color:var(--c1)">15 Juli 2026</td><td>Daefa / Rehab</td><td>Nada Salam / Taqwa</td><td style="font-weight:700">Rp 29.500.000</td><td>16 hari</td><td><div style="display:flex;gap:6px"><button class="action-btn" style="background:#eff6ff;color:#1d4ed8" onclick="showToast('Mode edit paket')">✏️ Edit</button><button class="action-btn btn-del">Nonaktifkan</button></div></td></tr>
+                  <tr><td style="font-weight:700;color:var(--c1)">01 Agustus 2026</td><td>Daefa / Rehab</td><td>Nada Salam / Taqwa</td><td style="font-weight:700">Rp 31.500.000</td><td>16 hari</td><td><div style="display:flex;gap:6px"><button class="action-btn" style="background:#eff6ff;color:#1d4ed8" onclick="showToast('Mode edit paket')">✏️ Edit</button><button class="action-btn btn-del">Nonaktifkan</button></div></td></tr>
+                  <tr><td style="font-weight:700;color:var(--c1)">05 September 2026</td><td>Daefa / Rehab</td><td>Nada Salam / Taqwa</td><td style="font-weight:700">Rp 34.500.000</td><td>16 hari</td><td><div style="display:flex;gap:6px"><button class="action-btn" style="background:#eff6ff;color:#1d4ed8" onclick="showToast('Mode edit paket')">✏️ Edit</button><button class="action-btn btn-del">Nonaktifkan</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL UPLOAD ==================== -->
+<div id="pay-modal" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Upload Bukti Pembayaran</h3>
+      <button class="modal-close" onclick="closePayModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="background:var(--c5);border-radius:12px;padding:16px;margin-bottom:16px">
+        <div style="font-size:13px;font-weight:600;color:var(--c1);margin-bottom:4px">Jumlah yang harus dibayar</div>
+        <div style="font-size:24px;font-weight:800;color:var(--c3)" id="modal-amount">Rp 14.250.000</div>
+      </div>
+      <div class="form-group">
+        <label>File Bukti Transfer</label>
+        <label class="file-input-label"><input type="file" accept="image/*,.pdf" onchange="fileSelected(this)">📎 Pilih File</label>
+        <p style="font-size:11.5px;color:#9ca3af;margin-top:6px">Format: JPG, PNG, PDF. Maks 5MB</p>
+        <div id="file-name" style="font-size:12px;color:var(--c3);margin-top:6px;display:none"></div>
+      </div>
+      <button class="modal-btn" onclick="submitBukti()">📤 Kirim Bukti Transfer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+  const packages = {
+    1: { date: '01 Juli 2026', harga: 28500000, mekkah: 'Snoed / Srtf ★★★', madinah: 'Nada Salam / Srtf ★★★' },
+    2: { date: '15 Juli 2026', harga: 29500000, mekkah: 'Daefa / Rehab', madinah: 'Nada Salam / Taqwa' },
+    3: { date: '01 Agustus 2026', harga: 31500000, mekkah: 'Daefa / Rehab', madinah: 'Nada Salam / Taqwa' },
+    4: { date: '05 September 2026', harga: 34500000, mekkah: 'Daefa / Rehab', madinah: 'Nada Salam / Taqwa' },
+  };
+  let selectedPaket = null, payType = 'DP';
+
+  function fmt(n) {
+    return 'Rp ' + n.toLocaleString('id-ID');
+  }
+
+  function showPage(p) {
+    document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+    document.getElementById('page-' + p).classList.add('active');
+    window.scrollTo(0, 0);
+    return false;
+  }
+
+  function selectPackage(id) {
+    selectedPaket = id;
+    showPage('daftar');
+    document.getElementById('f-paket').value = id;
+    updateSummary();
+  }
+
+  function selectPayType(t, el) {
+    payType = t;
+    document.querySelectorAll('.pay-opt').forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+    updateSummary();
+  }
+
+  function updateSummary() {
+    const sel = document.getElementById('f-paket');
+    const id = parseInt(sel.value);
+    if (!id) return;
+    const pkg = packages[id];
+    const total = pkg.harga;
+    let bayar, label, sisa = 0, cicilanInfo = '';
+    if (payType === 'DP') {
+      bayar = Math.ceil(total * 0.5); sisa = total - bayar; label = 'DP 50%';
+    } else if (payType === 'CICILAN') {
+      bayar = Math.ceil(total * 0.5); sisa = total - bayar;
+      const cicilan = Math.ceil(sisa / 3);
+      label = 'DP + 3x Cicilan';
+      cicilanInfo = `<div class="summary-row"><span class="lbl">Per Cicilan</span><span>${fmt(cicilan)}</span></div>`;
+    } else {
+      bayar = total; label = 'Lunas';
+    }
+    document.getElementById('summary-content').innerHTML = `
+      <div class="summary-row"><span class="lbl">Paket</span><span>${pkg.date}</span></div>
+      <div class="summary-row"><span class="lbl">Total Harga</span><span>${fmt(total)}</span></div>
+      <div class="summary-row"><span class="lbl">Metode</span><span>${label}</span></div>
+      ${cicilanInfo}
+      <div class="summary-total"><span>Bayar Sekarang</span><span class="price">${fmt(bayar)}</span></div>
+      ${sisa > 0 ? `<div style="display:flex;justify-content:space-between;font-size:12px;margin-top:6px;padding-top:6px;border-top:1px solid rgba(74,127,167,.2)"><span style="color:rgba(179,207,229,.6)">Sisa Tagihan</span><span style="color:rgba(179,207,229,.8)">${fmt(sisa)}</span></div>` : ''}
+      <div style="display:flex;align-items:flex-start;gap:8px;background:rgba(74,127,167,.15);border-radius:9px;padding:11px;margin-top:14px">
+        <span style="font-size:12px">ℹ️</span>
+        <span style="font-size:11.5px;color:rgba(179,207,229,.8)">Setelah mendaftar, Anda akan mendapat invoice dan instruksi pembayaran.</span>
+      </div>
+    `;
+    document.getElementById('modal-amount').textContent = fmt(bayar);
+  }
+
+  function submitDaftar() {
+    const n = document.getElementById('f-nama').value;
+    const k = document.getElementById('f-ktp').value;
+    const w = document.getElementById('f-wa').value;
+    const pkg = document.getElementById('f-paket').value;
+    if (!n || !k || !w || !pkg) { showToast('Lengkapi semua data terlebih dahulu!'); return; }
+    // Simulate success
+    const invNum = 'AST/UMR/2026/' + (Math.floor(Math.random() * 9000) + 1000);
+    document.getElementById('inv-nomor').textContent = invNum;
+    document.getElementById('inv-num-display').textContent = invNum;
+    document.getElementById('inv-keterangan').textContent = invNum;
+    document.getElementById('inv-nama').textContent = n;
+    document.getElementById('inv-ktp').textContent = k;
+    document.getElementById('inv-wa').textContent = w;
+    if (pkg && packages[parseInt(pkg)]) {
+      const p = packages[parseInt(pkg)];
+      document.getElementById('inv-paket').textContent = p.date;
+      document.getElementById('inv-total').textContent = fmt(p.harga);
+      document.getElementById('inv-sisa').textContent = fmt(p.harga);
+      document.getElementById('inv-metode').textContent = payType;
+    }
+    showToast('Pendaftaran berhasil! Menuju invoice...');
+    setTimeout(() => showPage('invoice'), 800);
+  }
+
+  function kirimWA() {
+    const inv = document.getElementById('inv-nomor').textContent;
+    const nama = document.getElementById('inv-nama').textContent;
+    const msg = `Assalamu'alaikum, saya ingin konfirmasi pembayaran umroh.\n\nNo. Invoice: ${inv}\nNama: ${nama}\n\nMohon konfirmasi. Terima kasih.`;
+    window.open(`https://wa.me/6281235270809?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  function openPayModal() { document.getElementById('pay-modal').classList.add('open'); }
+  function closePayModal() { document.getElementById('pay-modal').classList.remove('open'); }
+
+  function fileSelected(input) {
+    const fn = document.getElementById('file-name');
+    if (input.files.length > 0) { fn.textContent = '✓ ' + input.files[0].name; fn.style.display = 'block'; }
+  }
+
+  function submitBukti() {
+    closePayModal();
+    showToast('Bukti transfer berhasil dikirim! Menunggu verifikasi admin.');
+    document.getElementById('inv-status').textContent = 'Menunggu Verifikasi';
+    document.getElementById('inv-status').style.background = '#dbeafe';
+    document.getElementById('inv-status').style.color = '#1e40af';
+  }
+
+  function doTracking() {
+    const inv = document.getElementById('t-inv').value;
+    const wa = document.getElementById('t-wa').value;
+    if (!inv || !wa) { showToast('Masukkan nomor invoice dan WhatsApp!'); return; }
+    const result = document.getElementById('track-result');
+    result.style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('tr-pct').textContent = '50%';
+      document.getElementById('tr-bar').style.width = '50%';
+      document.getElementById('tr-bayar').textContent = 'Rp 14.250.000';
+      document.getElementById('tr-sisa').textContent = 'Rp 14.250.000';
+    }, 300);
+    showToast('Data jamaah ditemukan!');
+  }
+
+  function adminTab(tab, el) {
+    document.querySelectorAll('[id^="atab-"]').forEach(x => x.style.display = 'none');
+    document.getElementById('atab-' + tab).style.display = 'block';
+    document.querySelectorAll('.nav-item').forEach(x => x.classList.remove('active'));
+    el.classList.add('active');
+    const titles = { dashboard: 'Dashboard', pendaftar: 'Rekap Pendaftar', pembayaran: 'Pembayaran', pengaturan: 'Pengaturan' };
+    document.getElementById('admin-page-title').textContent = titles[tab];
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show', 'success');
+    setTimeout(() => t.classList.remove('show', 'success'), 3000);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             Int            @id @default(autoincrement())
+  nama           String
+  ktp            String         @unique
+  tanggal_lahir  DateTime
+  alamat         String
+  whatsapp       String
+  createdAt      DateTime       @default(now())
+  registrations  Registration[]
+}
+
+model Package {
+  id             Int            @id @default(autoincrement())
+  tanggal        DateTime
+  hotel_mekkah   String
+  hotel_madinah  String?
+  harga          Int
+  durasi         Int            @default(16)
+  maskapai       String         @default("Lion Air Premium (Direct)")
+  aktif          Boolean        @default(true)
+  registrations  Registration[]
+}
+
+model Registration {
+  id             Int            @id @default(autoincrement())
+  user_id        Int
+  package_id     Int
+  payment_type   PaymentType
+  total          Int
+  status         RegStatus      @default(MENUNGGU_PEMBAYARAN)
+  createdAt      DateTime       @default(now())
+  user           User           @relation(fields: [user_id], references: [id])
+  package        Package        @relation(fields: [package_id], references: [id])
+  payments       Payment[]
+  invoice        Invoice?
+}
+
+model Payment {
+  id               Int            @id @default(autoincrement())
+  registration_id  Int
+  jumlah           Int
+  bukti_transfer   String?
+  status           PayStatus      @default(PENDING)
+  cicilan_ke       Int?
+  tanggal          DateTime       @default(now())
+  registration     Registration   @relation(fields: [registration_id], references: [id])
+}
+
+model Invoice {
+  id               Int            @id @default(autoincrement())
+  nomor_invoice    String         @unique
+  registration_id  Int            @unique
+  status           InvStatus      @default(BELUM_LUNAS)
+  createdAt        DateTime       @default(now())
+  registration     Registration   @relation(fields: [registration_id], references: [id])
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  nama      String
+}
+
+model Setting {
+  id     Int    @id @default(autoincrement())
+  key    String @unique
+  value  String
+}
+
+enum PaymentType {
+  DP
+  CICILAN
+  LUNAS
+}
+
+enum RegStatus {
+  MENUNGGU_PEMBAYARAN
+  MENUNGGU_VERIFIKASI
+  DP_LUNAS
+  CICILAN_1
+  CICILAN_2
+  CICILAN_3
+  LUNAS
+}
+
+enum PayStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum InvStatus {
+  BELUM_LUNAS
+  SEBAGIAN
+  LUNAS
+}

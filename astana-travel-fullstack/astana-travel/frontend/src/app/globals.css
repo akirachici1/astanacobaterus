@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0A1931;
+  --color-primary-light: #1A3D63;
+  --color-secondary: #4A7FA7;
+  --color-accent: #B3CFE5;
+  --color-surface: #F6FAFD;
+  --font-display: 'Amiri', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  line-height: 1.6;
+}
+
+/* Islamic geometric pattern overlay */
+.pattern-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234A7FA7' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.arabic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0 L80 20 L80 60 L40 80 L0 60 L0 20 Z' fill='none' stroke='%234A7FA7' stroke-opacity='0.06' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='15' fill='none' stroke='%234A7FA7' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--color-secondary); border-radius: 3px; }
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Custom Components */
+@layer components {
+  .btn-primary {
+    @apply bg-[#0A1931] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A3D63] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-[#4A7FA7] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1A3D63] transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 inline-flex items-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#0A1931] text-[#0A1931] px-6 py-3 rounded-lg font-semibold hover:bg-[#0A1931] hover:text-white transition-all duration-300 inline-flex items-center gap-2;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-[#B3CFE5]/30 p-6;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-[#B3CFE5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4A7FA7] focus:border-transparent bg-white text-[#0A1931] placeholder-gray-400 transition-all;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-[#0A1931] leading-tight;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+}
